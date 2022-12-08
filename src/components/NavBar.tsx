@@ -31,13 +31,13 @@ const NavBar = () => {
             <UserCircleIcon className="w-8 h-8" />
           </button>
           <ul className="justify-start items-center gap-x-6 hidden lg:flex">
-            <li className="font-bold text-gray-500">
+            <li className="font-bold text-white">
               <Link href="/">ورود / ثبت نام</Link>
             </li>
-            <li className="font-bold text-gray-500">
+            <li className="font-bold text-white">
               <Link href="/">میزبان شوید</Link>
             </li>
-            <li className="font-bold text-gray-500">
+            <li className="font-bold text-white">
               <Link href="/">علاقه مندی ها</Link>
             </li>
           </ul>
@@ -95,11 +95,11 @@ const NavBar = () => {
           showSideBar
             ? `overflow-y-hidden  ease-in duration-700 absolute text-gray-300 
             right-0 top-0 w-full h-screen  
-            flex flex-col bg-gray-300 `
+            flex flex-col inset-0 bg-gray-600 bg-opacity-50 `
             : "absolute hidden top-0 h-screen right-[-100%] ease-in duration-1000"
         }
       >
-        <div className="relative z-30 bg-white w-[300px] h-full rounded-tl-2xl rounded-bl-2xl">
+        <div className="relative z-30   bg-white w-[300px] transition h-full rounded-tl-2xl rounded-bl-2xl">
           {/* X mark Icon */}
           <button
             onClick={toggleSideBarHandler}
