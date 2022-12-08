@@ -1,22 +1,43 @@
-import { UserCircleIcon, Bars3Icon } from "@heroicons/react/24/outline";
+import {
+  UserCircleIcon,
+  Bars3Icon,
+  XMarkIcon,
+  HomeIcon,
+  HeartIcon,
+  FolderPlusIcon,
+  QuestionMarkCircleIcon,
+  ShieldCheckIcon,
+} from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { useState } from "react";
+import Divider from "./Divider";
+
 const NavBar = () => {
+  const [showSideBar, setShowSideBar] = useState(false);
+
+  const toggleSideBarHandler = () => {
+    setShowSideBar(!showSideBar);
+  };
+
   return (
-    <div className="flex justify-between items-center px-32 py-4 ">
+    <div className="flex justify-between items-center px-20 lg:px-32 py-4 absolute z-20 w-full">
       <div>
         <div className="flex justify-start items-center gap-x-6">
-          <button className="bg-gray-200 rounded-full py-1 px-2 flex justify-center items-center">
+          <button
+            onClick={toggleSideBarHandler}
+            className="bg-gray-200 rounded-full py-1 px-2 flex justify-center items-center"
+          >
             <Bars3Icon className="w-8 h-8" />
             <UserCircleIcon className="w-8 h-8" />
           </button>
-          <ul className="flex justify-start items-center gap-x-6">
-            <li>
+          <ul className="justify-start items-center gap-x-6 hidden lg:flex">
+            <li className="font-bold text-gray-500">
               <Link href="/">ورود / ثبت نام</Link>
             </li>
-            <li>
+            <li className="font-bold text-gray-500">
               <Link href="/">میزبان شوید</Link>
             </li>
-            <li>
+            <li className="font-bold text-gray-500">
               <Link href="/">علاقه مندی ها</Link>
             </li>
           </ul>
@@ -68,6 +89,171 @@ const NavBar = () => {
             </div>
           </h1>
         </Link>
+      </div>
+      <div
+        className={
+          showSideBar
+            ? `overflow-y-hidden  ease-in duration-700 absolute text-gray-300 
+            right-0 top-0 w-full h-screen  
+            flex flex-col bg-gray-300 `
+            : "absolute hidden top-0 h-screen right-[-100%] ease-in duration-1000"
+        }
+      >
+        <div className="relative z-30 bg-white w-[300px] h-full rounded-tl-2xl rounded-bl-2xl">
+          {/* X mark Icon */}
+          <button
+            onClick={toggleSideBarHandler}
+            className="absolute z-20 -left-12 top-2 "
+          >
+            <XMarkIcon className="w-12 text-gray-400" />
+          </button>
+          <div>
+            {/* user */}
+            <div className="flex items-center gap-x-4 justify-center pt-10 pb-5">
+              <Link href="/">
+                <div className="w-14">
+                  {/* <UserCircleIcon className="w-16 font-[300] text-[var(--primary-gray)]" /> */}
+                  <svg
+                    className="sc-679cb2a8-0 iBzAsR sc-2fa8747d-1 eAKzKD"
+                    fill="#d6d6d6"
+                    viewBox="0 0 32 32"
+                    preserveAspectRatio="xMidYMid meet"
+                  >
+                    <defs>
+                      <clipPath id="clip-path">
+                        <polygon
+                          points="0 0 32 0 32 1.23 32 32 0 32 0 0"
+                          style={{ fill: "none" }}
+                        ></polygon>
+                      </clipPath>
+                    </defs>
+                    <g style={{ clipPath: 'url("#clip-path")' }}>
+                      <path d="M16,32A16,16,0,1,1,32,16,16,16,0,0,1,16,32ZM16,1.52A14.48,14.48,0,0,0,1.52,16a14.82,14.82,0,0,0,.28,2.82,14.48,14.48,0,0,0,28.4,0A15,15,0,0,0,30.48,16,14.5,14.5,0,0,0,16,1.52Z"></path>
+                      <path
+                        d="M20.5,13.5A4.5,4.5,0,1,1,16,9,4.49,4.49,0,0,1,20.5,13.5ZM19,18.71a6,6,0,1,0-5.94,0A9.76,9.76,0,0,0,6.25,28a.75.75,0,0,0,1.5,0,8.25,8.25,0,0,1,15.87-3.16h0A8.18,8.18,0,0,1,24.25,28a.75.75,0,0,0,1.5,0A9.76,9.76,0,0,0,19,18.71Z"
+                        style={{ fillRule: "evenodd" }}
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+              </Link>
+              <Link href="/">
+                <span className="text-[12px] font-medium text-[var(--primary-gray)] bg-[#f5f5f5] hover:bg-[#b9b9b9] transition ease-out px-4 py-2 rounded-2xl">
+                  ورود / ثبت نام
+                </span>
+              </Link>
+            </div>
+            {/* divider */}
+            <Divider />
+            {/* Menu */}
+            <div className="mt-4">
+              <ul className="flex flex-col gap-y-1">
+                <li className="mr-4">
+                  <Link href="/">
+                    <div className="flex items-center gap-3 pr-4 bg-[var(--primary-gray2)] py-2 rounded-lg transition ">
+                      <HomeIcon className="w-6 text-[#333] " />
+                      <span className="text-[var(--primary-gray)] font-[600] text-[14px]">
+                        صفحه اصلی
+                      </span>
+                    </div>
+                  </Link>
+                </li>
+                <li className="mr-4">
+                  <Link href="/">
+                    <div className="flex items-center gap-3 pr-4 hover:bg-[var(--primary-gray2)] py-2 rounded-lg transition ">
+                      <HeartIcon className="w-6 text-[#333] " />
+                      <span className="text-[var(--primary-gray)] font-[600] text-[14px]">
+                        علاقه مندی ها
+                      </span>
+                    </div>
+                  </Link>
+                </li>
+                <li className="mr-4">
+                  <Link href="/">
+                    <div className="flex items-center gap-3 pr-4 hover:bg-[var(--primary-gray2)] py-2 rounded-lg transition ">
+                      <FolderPlusIcon className="w-6 text-[#333] " />
+                      <span className="text-[var(--primary-gray)] font-[600] text-[14px]">
+                        میزبان شو
+                      </span>
+                    </div>
+                  </Link>
+                </li>
+                <li className="mr-4">
+                  <Link href="/">
+                    <div className="flex items-center gap-3 pr-4 hover:bg-[var(--primary-gray2)] py-2 rounded-lg transition ">
+                      <HomeIcon className="w-6 text-[#333] " />
+                      <span className="text-[var(--primary-gray)] font-[600] text-[14px]">
+                        پشتیبانی
+                      </span>
+                    </div>
+                  </Link>
+                </li>
+                <li className="mr-4">
+                  <Link href="/">
+                    <div className="flex items-center gap-3 pr-4 hover:bg-[var(--primary-gray2)] py-2 rounded-lg transition ">
+                      <QuestionMarkCircleIcon className="w-6 text-[#333] " />
+                      <span className="text-[var(--primary-gray)] font-[600] text-[14px]">
+                        سوالات متداول
+                      </span>
+                    </div>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            {/* divider */}
+            <Divider />
+            {/*  */}
+            <div className="mt-4">
+              <ul className="flex flex-col gap-y-1">
+                <li className="mr-4">
+                  <Link href="/">
+                    <div className="flex items-center gap-3 pr-4 hover:bg-[var(--primary-gray2)] py-2 rounded-lg transition ">
+                      <HomeIcon className="w-6 text-[#333] " />
+                      <span className="text-[var(--primary-gray)] font-[600] text-[14px]">
+                        دعوت از دوستان
+                      </span>
+                    </div>
+                  </Link>
+                </li>
+                <li className="mr-4">
+                  <Link href="/">
+                    <div className="flex items-center gap-3 pr-4 hover:bg-[var(--primary-gray2)] py-2 rounded-lg transition ">
+                      <HeartIcon className="w-6 text-[#333] " />
+                      <span className="text-[var(--primary-gray)] font-[600] text-[14px]">
+                        نصب جاجیگا
+                      </span>
+                    </div>
+                  </Link>
+                </li>
+                <li className="mr-4">
+                  <Link href="/">
+                    <div className="flex items-center gap-3 pr-4 hover:bg-[var(--primary-gray2)] py-2 rounded-lg transition ">
+                      <FolderPlusIcon className="w-6 text-[#333] " />
+                      <span className="text-[var(--primary-gray)] font-[600] text-[14px]">
+                        فرصت های شغلی
+                      </span>
+                    </div>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            {/* footer */}
+            <div className="absolute w-full bottom-0 py-4 bg-[#eeeeee] rounded-bl-2xl flex justify-around items-center">
+              <Link href="/">
+                <HeartIcon className="w-6 text-[var(--primary-gray)]" />
+              </Link>
+              <Link href="/">
+                <FolderPlusIcon className="w-6 text-[var(--primary-gray)]" />
+              </Link>
+              <Link href="/">
+                <HomeIcon className="w-6 text-[var(--primary-gray)]" />
+              </Link>
+              <Link href="/">
+                <ShieldCheckIcon className="w-6 text-[var(--primary-gray)]" />
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
