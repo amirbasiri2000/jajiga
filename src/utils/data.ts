@@ -58,19 +58,33 @@ export const data = {
       location: 'کردان',
       number: 602
     },
-    // {
-    //   id: 9,
-    //   image: '/images/popular-services/1.jpg',
-    //   type: 'سوییت',
-    //   location: 'بندر انزلی',
-    //   number: 488
-    // },
-    // {
-    //   id: 10,
-    //   image: '/images/popular-services/4.jpg',
-    //   type: 'ویلا',
-    //   location: 'رشت',
-    //   number: 390
-    // },
+    {
+      id: 9,
+      image: '/images/popular-services/1.jpg',
+      type: 'سوییت',
+      location: 'بندر انزلی',
+      number: 488
+    },
+    {
+      id: 10,
+      image: '/images/popular-services/4.jpg',
+      type: 'ویلا',
+      location: 'رشت',
+      number: 390
+    },
+    {
+      id: 11,
+      image: '/images/popular-services/1.jpg',
+      type: 'سوییت',
+      location: 'بندر انزلی',
+      number: 488
+    },
+    {
+      id: 12,
+      image: '/images/popular-services/4.jpg',
+      type: 'ویلا',
+      location: 'رشت',
+      number: 390
+    },
   ]
 }

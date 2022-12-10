@@ -4,7 +4,8 @@ import { ShareIcon } from "@heroicons/react/24/outline";
 
 const CardLG = () => {
   return (
-      <Link href="/" >
+    <div>
+      <Link href="/">
         <div className="relative w-[12.5rem] h-[16.5rem] shadow-inner rounded-xl shadow-gray-500">
           <Image
             className="w-full h-full rounded-xl z-0"
@@ -29,6 +30,7 @@ const CardLG = () => {
           </div>
         </div>
       </Link>
+    </div>
   );
 };
 
