@@ -7,3 +7,9 @@ export type Popular_ser = {
   location: string,
   number: number
 }
+
+export type Footer_quickSearch = {
+  id: number,
+  title: string,
+  link: string
+}

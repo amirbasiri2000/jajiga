@@ -1,13 +1,18 @@
 import { FC } from "react";
 import Head from "next/head";
 import NavBar from "./NavBar";
+import Footer from "./Footer";
+
+import { Footer_quickSearch } from "../utils/types";
 
 interface Props {
   children: React.ReactNode;
   title: string;
+  data: Footer_quickSearch[],
 }
 
-const Layout: FC<Props> = ({ children, title }) => {
+
+const Layout: FC<Props> = ({ children, title, data }) => {
   return (
     <div>
       <Head>
@@ -22,8 +27,8 @@ const Layout: FC<Props> = ({ children, title }) => {
         </div>
         <main className="min-h-screen">{children}</main>
         <div>
-          <footer className="flex justify-center items-center h-10 bg-gray-200">
-            Footer
+          <footer>
+            <Footer data={data} />
           </footer>
         </div>
       </div>

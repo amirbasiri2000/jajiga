@@ -10,10 +10,15 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
+// data;
+
+import { data } from "../utils/data";
+
 export default function Home() {
+  const footer_search_data = data.footer_quick_search;
   return (
     <div className="">
-      <Layout title="Home">
+      <Layout title="Home" data={footer_search_data}>
         <Hero />
         <div className="bg-white">
           <PopularServices />
@@ -21,5 +26,5 @@ export default function Home() {
         </div>
       </Layout>
     </div>
-  )
+  );
 }

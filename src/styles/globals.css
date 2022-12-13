@@ -24,6 +24,36 @@
   height: 60px !important;
   border-radius: 50%;
 }
+
+.footer-quick-links-shadow {
+  box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;
+}
+.footer-quick-search-shadow {
+  box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;
+}
+.footer-instagram-icon-box-bg-shadow {
+  background: linear-gradient(
+    125deg,
+    rgb(131, 58, 180) 0%,
+    rgb(253, 29, 29) 55%,
+    rgb(252, 176, 69) 100%
+  );
+  box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;
+}
+
+.footer-telegram-icon-box-bg-shadow {
+  background: linear-gradient(
+    125deg,
+    rgb(53, 185, 252) 0%,
+    rgb(5, 131, 193) 100%
+  );
+  box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;
+}
+
 @layer base {
   html {
     @apply scroll-smooth;
@@ -31,5 +61,11 @@
 
   body {
     @apply font-[FontName] font-[tahoma];
+  }
+}
+
+@layer components {
+  .footer_link {
+    @apply text-[#072ff0] py-1 px-2 my-1 font-medium cursor-pointer text-[.75rem];
   }
 }
