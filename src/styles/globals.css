@@ -9,22 +9,52 @@
   --primary-gray2: #f5f5f5;
 }
 
+/* ------------------------Swiper------------------------- */
+
 .swiper-grid-column > .swiper-wrapper {
   flex-direction: row !important;
 }
 .swiper-slide {
   height: auto !important;
+  display: flex;
+  justify-content: center;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
   color: #333 !important;
   background: #e3dfdf !important;
-  width: 60px !important;
-  height: 60px !important;
+  width: 2rem !important;
+  height: 2rem !important;
   border-radius: 50%;
+  opacity: 0;
+  transition: all .6s;
+  top: 45% !important;
 }
 
+.swiper-rtl .swiper-button-prev{
+  right: 1px !important;
+}
+.swiper-rtl .swiper-button-next{
+  left: 1px !important;
+}
+
+.swiper:hover .swiper-button-next{
+  opacity: 90;
+}
+.swiper:hover .swiper-button-prev{
+  opacity: 90;
+}
+
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
+  font-size: 1.1rem !important;
+  font-weight: 700;
+}
+.swiper-pagination{
+  position: relative !important;
+  margin-top: 2rem;
+}
+/* --------------------------======================== */
 .footer-quick-links-shadow {
   box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px,
     rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;
@@ -53,7 +83,11 @@
   box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px,
     rgb(0 0 0 / 10%) 0px 1px 3px 0px, rgb(0 0 0 / 6%) 0px 1px 2px 0px;
 }
+/* ---------------------------------- */
 
+.featrues-box-shadow{
+  box-shadow: rgb(50 50 50 / 8%) 0px 2px 8px;
+}
 @layer base {
   html {
     @apply scroll-smooth;

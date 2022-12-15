@@ -14,7 +14,7 @@ const CardSM = ({ item }: Props) => {
   return (
     <div>
       <Link href="/">
-        <div className=" flex m-10 gap-2 ">
+        <div className=" flex lg:m-5 m-3 gap-2 ">
           <div className="relative w-[4.3rem] lg:w-[8.7rem] lg:h-[8.7rem] h-[4.3rem]">
             <Image
               className="rounded-xl"

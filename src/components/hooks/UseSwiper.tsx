@@ -12,11 +12,10 @@ interface Props {
 const UseSwiper = ({ children }: Props) => {
   return (
     <Swiper
-      className=""
-      paginationWidth={10}
-      centeredSlidesDesk={true}
+      // paginationWidth={10}
+      // centeredSlidesDesk={true}
       // slidesPerView={6}
-      centeredSlides={true}
+      centeredSlides={false}
       autoplay={{
         delay: 3500,
         disableOnInteraction: false,
@@ -33,19 +32,19 @@ const UseSwiper = ({ children }: Props) => {
         },
         370: {
           // Mobile L
-          slidesPerView: 2,
+          slidesPerView: 1,
         },
         570: {
           // Tablet
-          slidesPerView: 3,
+          slidesPerView: 2,
         },
         760: {
           // LapTop
-          slidesPerView: 4,
+          slidesPerView: 3,
         },
         1280: {
           // Desktop
-          slidesPerView: 5,
+          slidesPerView: 4,
         },
       }}
     >

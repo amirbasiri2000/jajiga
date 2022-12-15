@@ -3,30 +3,26 @@ import Link from "next/link";
 import { Footer_quickSearch } from "../utils/types";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { FaTelegramPlane } from "react-icons/fa";
+import Title_H3 from "./common/Title_H3";
 
 interface Props {
   data: Footer_quickSearch[];
 }
 
 const Footer = ({ data }: Props) => {
-  console.log(data);
   return (
     <div className="mt-8">
-      <div className="bg-[#f1f1f1] overflow-hidden rounded-tl-2xl rounded-tr-2xl px-4 flex justify-center items-center m-auto">
-        <div className="pt-4 mt-4">
-          <div>
+      <div className="bg-[#f1f1f1] overflow-hidden rounded-tl-2xl rounded-tr-2xl px-10 lg:px-28 md:px-20 flex justify-center items-center m-auto">
+        <div className="pt-4 mt-4 md:grid md:grid-cols-2 md:items-start flex flex-col gap-y-8">
+          {/* ------------- */}
+          <div className="flex flex-col gap-y-4 sm:flex sm:justify-between lg:justify-between md:justify-around md:flex-row-reverse md:items-start">
             <div className="flex flex-col justify-center items-center ">
-              <h3
-                className="text-lg font-bold pb-2 text-[#252a31]"
-                title="نصب اپلیکیشن جاجیگا"
-              >
-                نصب اپلیکیشن جاجیگا
-              </h3>
-              <div className="flex flex-col justify-between items-center gap-y-[6px] gap-x-1">
+              <Title_H3 title="نصب اپلیکیشن جاجیگا" />
+              <div className="flex flex-col justify-between items-center gap-y-[6px] md:gap-y-1 gap-x-1">
                 <div className="flex items-center gap-x-1 mx-auto">
                   <div>
                     <Link href="/">
-                      <div className="relative w-44 h-16">
+                      <div className="relative w-44 md:w-[5rem] md:h-[3.25rem] rounded-lg bg-black lg:w-32 h-16 ">
                         <Image
                           src="/images/install-applications/Bazzar.png"
                           alt="bazar"
@@ -39,7 +35,7 @@ const Footer = ({ data }: Props) => {
 
                   <div>
                     <Link href="/">
-                      <div className="relative w-44 h-16">
+                      <div className="relative w-44 md:w-[5rem] md:h-[3.25rem] bg-black rounded-md lg:w-32 h-16">
                         <Image
                           src="/images/install-applications/PlayStore.png"
                           alt="bazar"
@@ -54,7 +50,7 @@ const Footer = ({ data }: Props) => {
                 <div className="flex items-center gap-x-1 mx-auto">
                   <div>
                     <Link href="/">
-                      <div className="relative w-44 h-16">
+                      <div className="relative w-44 md:w-[5rem] md:h-[3.25rem] bg-black rounded-md lg:w-32 h-16">
                         <Image
                           src="/images/install-applications/Myket.png"
                           alt="bazar"
@@ -67,7 +63,7 @@ const Footer = ({ data }: Props) => {
 
                   <div>
                     <Link href="/">
-                      <div className="relative w-44 h-16">
+                      <div className="relative w-44 md:w-[5rem] md:h-[3.25rem] bg-black rounded-md lg:w-32 h-16">
                         <Image
                           src="/images/install-applications/WebApp.png"
                           alt="bazar"
@@ -82,13 +78,8 @@ const Footer = ({ data }: Props) => {
             </div>
 
             <div className="flex flex-col justify-center items-center">
-              <h3
-                className="text-lg font-bold pb-2 text-[#252a31]"
-                title="لینک های دسترسی"
-              >
-                لینک های دسترسی
-              </h3>
-              <div className="flex">
+              <Title_H3 title="لینک های دسترسی" />
+              <div className="flex justify-evenly w-full">
                 <div className="flex flex-col justify-center items-center">
                   <Link href="/">
                     <p className="footer_link">چگونه مهمان شوم</p>
@@ -121,16 +112,11 @@ const Footer = ({ data }: Props) => {
             </div>
           </div>
           {/* ------------- */}
-          <div className="my-7">
+          <div className="flex flex-col gap-y-4 md:my-0 sm:flex sm:justify-between sm:flex-row md:justify-around items-center md:items-start  ">
             <div className="flex flex-col justify-center items-center mb-7">
-              <h3
-                className="text-lg font-bold pb-2 text-[#252a31]"
-                title="با ما همراه شوید"
-              >
-                با ما همراه شوید
-              </h3>
-              <div className="flex gap-2 justify-center items-center">
-                <div className="footer-instagram-icon-box-bg-shadow w-[45vw] rounded-lg h-12 pt-1">
+              <Title_H3 title="با ما همراه شوید" />
+              <div className="flex sm:flex-col gap-2 justify-center items-center">
+                <div className="footer-instagram-icon-box-bg-shadow w-[31vw] sm:w-[30vw] md:w-[16vw] md:pt-1 rounded-lg h-12 md:h-[3.25rem] sm:h-10 pt-1 sm:pt-0 lg:w-36">
                   <Link href="/">
                     <div className="flex justify-center items-center gap-x-3 text-white">
                       <span>600K</span>
@@ -138,7 +124,7 @@ const Footer = ({ data }: Props) => {
                     </div>
                   </Link>
                 </div>
-                <div className="footer-telegram-icon-box-bg-shadow w-[45vw] rounded-lg h-12 pt-1">
+                <div className="footer-telegram-icon-box-bg-shadow w-[31vw] sm:w-[30vw] md:w-[16vw] md:pt-1 rounded-lg h-12 md:h-[3.25rem] sm:h-10 pt-1 sm:pt-0 lg:w-36">
                   <Link href="/">
                     <div className="flex justify-center items-center gap-x-3 text-white">
                       <span>600K</span>
@@ -148,15 +134,11 @@ const Footer = ({ data }: Props) => {
                 </div>
               </div>
             </div>
+
             <div className="flex flex-col justify-center items-center ">
-              <h3
-                className="text-lg font-bold pb-2 text-[#252a31]"
-                title="با خیال راحت به جاجیگا اعتماد کنید"
-              >
-                با خیال راحت به جاجیگا اعتماد کنید
-              </h3>
-              <div className="flex justify-between items-center">
-                <div className=" footer-quick-links-shadow mx-2 bg-white w-[80px] h-[80px] p-1 rounded-xl cursor-pointer">
+              <Title_H3 title="با خیال راحت به جاجیگا اعتماد کنید" />
+              <div className="flex justify-between items-center md:grid md:grid-cols-2 md:gap-y-4">
+                <div className=" footer-quick-links-shadow mx-2 bg-white w-[5rem] sm:w-[6rem] h-[5rem] sm:h-[6rem] p-1 rounded-xl cursor-pointer">
                   <Link href="/">
                     <div className="relative w-full h-full ">
                       <Image
@@ -169,7 +151,7 @@ const Footer = ({ data }: Props) => {
                   </Link>
                 </div>
 
-                <div className=" footer-quick-links-shadow mx-2 bg-white w-[80px] h-[80px] p-1 rounded-xl cursor-pointer">
+                <div className=" footer-quick-links-shadow mx-2 bg-white w-[5rem] sm:w-[6rem] h-[5rem] sm:h-[6rem] p-1 rounded-xl cursor-pointer">
                   <Link href="/">
                     <div className="relative w-full h-full ">
                       <Image
@@ -182,7 +164,7 @@ const Footer = ({ data }: Props) => {
                   </Link>
                 </div>
 
-                <div className=" footer-quick-links-shadow mx-2 bg-white w-[80px] h-[80px] p-1 rounded-xl cursor-pointer">
+                <div className=" footer-quick-links-shadow mx-2 bg-white w-[5rem] sm:w-[6rem] h-[5rem] sm:h-[6rem] p-1 rounded-xl cursor-pointer">
                   <Link href="/">
                     <div className="relative w-full h-full ">
                       <Image
@@ -195,7 +177,7 @@ const Footer = ({ data }: Props) => {
                   </Link>
                 </div>
 
-                <div className=" footer-quick-links-shadow mx-2 bg-white w-[80px] h-[80px] p-1 rounded-xl cursor-pointer">
+                <div className=" footer-quick-links-shadow mx-2 bg-white w-[5rem] sm:w-[6rem] h-[5rem] sm:h-[6rem] p-1 rounded-xl cursor-pointer">
                   <Link href="/">
                     <div className="relative w-full h-full ">
                       <Image
@@ -212,13 +194,10 @@ const Footer = ({ data }: Props) => {
           </div>
           {/* ------------- */}
           <div className="flex flex-col justify-center items-center">
-            <h3
-              className="text-lg font-bold pb-2 text-[#252a31]"
-              title="جستجوی سریع"
-            >
-              جستجوی سریع
-            </h3>
-            <div className="flex flex-wrap w-[100vw] overflow-y-auto gap-x-2">
+            <div className="md:hidden">
+              <Title_H3 title="جستجوی سریع" />
+            </div>
+            <div className="grid grid-cols-4 w-full gap-x-2">
               {data?.map((item) => (
                 <div
                   key={item.id}
@@ -233,6 +212,7 @@ const Footer = ({ data }: Props) => {
               ))}
             </div>
           </div>
+          {/* ------------- */}
         </div>
       </div>
       <div className="bg-[#cbcbcb] flex justify-center items-center py-3">
