@@ -4,7 +4,6 @@ import UseSwiper from "../hooks/UseSwiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const FastSearch = () => {
-  const data = [1, 2, 3, 4, 5, 6];
 
   return (
     <div className="max-w-[1120px] mx-auto mt-14">

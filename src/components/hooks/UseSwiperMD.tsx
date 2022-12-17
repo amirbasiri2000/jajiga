@@ -6,10 +6,10 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 interface Props {
-  children: React.ReactNode; 
+  children: React.ReactNode;
 }
 
-const UseSwiper = ({ children }: Props) => {
+const UseSwiperMD = ({ children }: Props) => {
   return (
     <Swiper
       // paginationWidth={10}
@@ -32,15 +32,15 @@ const UseSwiper = ({ children }: Props) => {
         },
         570: {
           // Tablet
-          slidesPerView: 2,
+          slidesPerView: 1,
         },
         760: {
           // LapTop
-          slidesPerView: 3,
+          slidesPerView: 2,
         },
         1280: {
           // Desktop
-          slidesPerView: 4,
+          slidesPerView: 3,
         },
       }}
     >
@@ -48,4 +48,4 @@ const UseSwiper = ({ children }: Props) => {
     </Swiper>
   );
 };
-export default UseSwiper;
+export default UseSwiperMD;

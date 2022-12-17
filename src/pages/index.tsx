@@ -12,6 +12,7 @@ import "swiper/css/scrollbar";
 // data;
 import { data } from "../utils/data";
 import Features from "../components/Features";
+import BestRooms from "../components/best-rooms/BestRooms";
 
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
           <PopularServices />
           <FastSearch />
           <Features />
+          <BestRooms />
         </div>
       </Layout>
     </div>
